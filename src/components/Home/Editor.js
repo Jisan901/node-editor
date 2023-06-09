@@ -25,11 +25,11 @@ function Editor() {
     const [reactFlowInstance, setReactFlowInstance] = useState(null);
 
     
-    const initialNodes = [];
+    const initialNodes = [ { id: '1', position: { x: 0, y: 0 },type:"inputNode", data: { label: '1' } },];
     const initialEdges = [];
     const [nodes, setNodes, onNodesChange] = useNodesState(initialNodes);
     const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
-    const onConnect = useCallback((params) => setEdges((eds) => addEdge(params, eds)), []);
+    const onConnect = useCallback((params) => setEdges((eds) => addEdge(params, eds)), [setEdges]);
     
     //  dataTransfer dropEffect
     
@@ -66,7 +66,7 @@ function Editor() {
 
       setNodes((nds) => nds.concat(newNode));
     },
-    [reactFlowInstance]
+    [reactFlowInstance,setNodes]
   );
   
   

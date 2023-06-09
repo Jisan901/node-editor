@@ -1,38 +1,23 @@
-.App {
-  text-align: center;
+.react-flow__handle{
+    background-color: rgba(255,50,222,0.07);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.touchdevice-flow .react-flow__handle {
+  width: 20px;
+  height: 20px;
+  border-radius: 3px;
+  background-color: #9f7aea;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.touchdevice-flow .react-flow__handle.connecting {
+  animation: bounce 1600ms infinite ease-out;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translate(0, -50%) scale(1);
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+  50% {
+    transform: translate(0, -50%) scale(1.1);
   }
 }
